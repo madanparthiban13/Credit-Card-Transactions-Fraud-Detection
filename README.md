@@ -3,7 +3,7 @@
 
 This project demonstrates the use of structured query language (SQL) for identifying potentially fraudulent credit card transactions. The dataset consists of 50,000 synthetic transactions that include cardholder information, merchant details, transaction metadata, and basic fraud indicators.
 
-The goal of this project is to simulate fraud detection techniques commonly used in financial institutions and payment systems, using SQL alone—no machine learning required.
+The goal of this project is to simulate fraud detection techniques commonly used in financial institutions and payment systems, using SQL alone.
 
 ## Project Files
 
@@ -77,14 +77,6 @@ All data was generated to resemble real-world transaction patterns with embedded
 
 5. Run the SQL queries from `fraud_detection_queries.sql`
 
-## Optional Power BI Dashboard
-
-The data and queries can be used to build a fraud monitoring dashboard in Power BI, focusing on:
-- Transaction volume by country and category
-- Time-based trends in flagged activity
-- Top flagged users and their patterns
-
 ## About This Project
-
-This is an individual SQL portfolio project intended to demonstrate the use of core SQL skills in a realistic fraud detection scenario. The queries and structure are designed for analysis and insight, not production deployment.
+This is an SQL portfolio project intended to demonstrate the use of core SQL skills in a realistic fraud detection scenario. The queries and structure are designed for analysis and insight, not production deployment.
 
