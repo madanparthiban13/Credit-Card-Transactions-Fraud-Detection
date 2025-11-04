@@ -1,1 +1,1 @@
-# Credit-Card-Transactions-Fraud-Detection-Logic-SQL-Power-BI-
+# Credit-Card-Transactions-Fraud-Detection
