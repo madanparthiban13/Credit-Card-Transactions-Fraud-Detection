@@ -19,9 +19,6 @@ fraud-detection-sql/
 │
 ├── README.md
 
-markdown
-Copy code
-
 ---
 
 ##  Dataset Overview
@@ -36,8 +33,6 @@ The dataset includes fields such as:
   - `flag_high_amount`
   - `flag_cross_country_quick`
   - `flag_declined`
-
-> This is a synthetic dataset designed to mimic real-world transaction behavior, with built-in anomalies to support fraud analysis.
 
 ---
 
