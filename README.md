@@ -1,13 +1,10 @@
+💳 Credit Card Fraud Detection Using SQL
 
-# Credit Card Fraud Detection Using SQL
+This project simulates how SQL can be used to detect potentially fraudulent credit card transactions — similar to what financial institutions might perform in early fraud detection systems. The dataset includes 50,000 synthetic transactions featuring cardholder, merchant, and transaction details, along with embedded fraud indicators.
 
-This project demonstrates the use of structured query language (SQL) for identifying potentially fraudulent credit card transactions. The dataset consists of 50,000 synthetic transactions that include cardholder information, merchant details, transaction metadata, and basic fraud indicators.
+The goal is to showcase practical SQL skills by identifying suspicious behavior patterns — using SQL alone, without machine learning or external tools.
 
-The goal of this project is to simulate fraud detection techniques commonly used in financial institutions and payment systems, using SQL alone.
-
-## Project Files
-
-```
+Project Structure
 fraud-detection-sql/
 │
 ├── data/
@@ -17,66 +14,84 @@ fraud-detection-sql/
 │   └── fraud_detection_queries.sql
 │
 ├── README.md
-```
 
-## Dataset Summary
+Dataset Overview
 
-The dataset contains fields such as:
+The dataset includes fields such as:
 
-- `user_id`, `card_id`, `merchant_id`
-- Transaction details: `amount`, `currency`, `status`, `transaction_time`, `transaction_country`
-- Merchant details: `category`, `merchant_name`, `country_code`
-- Card metadata: `card_type`, `status_card`
-- Fraud flags: 
-  - `flag_high_amount`
-  - `flag_cross_country_quick`
-  - `flag_declined`
+User and Card Details: user_id, card_id, merchant_id
 
-All data was generated to resemble real-world transaction patterns with embedded anomalies for fraud analysis.
+Transaction Info: amount, currency, status, transaction_time, transaction_country
 
-## SQL Skills Demonstrated
+Merchant Info: category, merchant_name, country_code
 
-- Joins between multiple tables
-- Aggregation functions: `SUM`, `COUNT`, `AVG`, `MAX`
-- Filtering with `WHERE`, `HAVING`, and conditional logic
-- Window functions: `LAG()` for time-based behavior analysis
-- Common Table Expressions (CTEs)
-- View creation for reusable query logic
+Card Metadata: card_type, status_card
 
-## Key Queries and Use Cases
+Fraud Flags:
 
-1. **Frequent declines**: Identify users with three or more declined transactions in a single day.
-2. **Geo-velocity detection**: Detect transactions from different countries within 24 hours.
-3. **Rapid repeated purchases**: Use time differences between transactions to catch bots or automation.
-4. **Gambling risk analysis**: Identify top users transacting with gambling-related merchants.
-5. **High amount flag validation**: Check how well high-value flags align with actual amounts.
-6. **Cross-feature fraud detection**: Combine geography and spend behavior to flag high-risk users.
-7. **User-level timelines**: Manually inspect user transaction patterns over time.
-8. **Reusable view**: Create a view (`suspicious_users`) for downstream analysis or dashboarding.
+flag_high_amount
 
-## How to Use This Project
+flag_cross_country_quick
 
-1. Install MySQL and open MySQL Workbench
-2. Create a new schema:
-   ```sql
-   CREATE DATABASE fraud_project;
-   USE fraud_project;
-   ```
+flag_declined
 
-3. Create the table structure using the queries in `fraud_detection_queries.sql`
-4. Import the dataset:
-   - Use the Import Wizard in MySQL Workbench
-   - Or run:
-     ```sql
-     LOAD DATA LOCAL INFILE 'path_to/fraud_sql_project_merged_dataset_fixed.csv'
-     INTO TABLE transactions_merged
-     FIELDS TERMINATED BY ',' ENCLOSED BY '"'
-     LINES TERMINATED BY '\n'
-     IGNORE 1 ROWS;
-     ```
+This is a synthetic dataset built to mimic real-world patterns, with anomalies introduced for testing fraud logic.
 
-5. Run the SQL queries from `fraud_detection_queries.sql`
+SQL Concepts Applied
 
-## About This Project
-This is an SQL portfolio project intended to demonstrate the use of core SQL skills in a realistic fraud detection scenario. The queries and structure are designed for analysis and insight, not production deployment.
+Table joins (user, card, merchant, transaction fields)
 
+Aggregations: SUM, COUNT, AVG, MAX
+
+Filtering: WHERE, HAVING, CASE WHEN
+
+Window Functions: LAG() to analyze time-based behavior
+
+Common Table Expressions (CTEs) for readable, modular queries
+
+View creation for reusable fraud logic
+
+Key Fraud Detection Scenarios
+
+Frequent Declines: Users with 3+ declined transactions in one day
+
+Geo-Velocity Checks: Transactions from different countries within 24 hours
+
+Rapid-Fire Transactions: Potential bot-like behavior based on short time gaps
+
+Gambling Risk Analysis: High activity with gambling merchants
+
+High-Amount Anomalies: Review how well high-value flags correlate with actual amounts
+
+Cross-Risk Users: Combine geography and transaction behavior to identify high-risk profiles
+
+Timeline Audits: Inspect transaction sequences per user
+
+Reusable Views: Created suspicious_users view for ongoing analysis or dashboards
+
+How to Run This Project
+
+Install MySQL (e.g., via MySQL Workbench)
+
+Create a new schema:
+
+CREATE DATABASE fraud_project;
+USE fraud_project;
+
+
+Set up the table structure using the script in fraud_detection_queries.sql
+
+Import the dataset:
+
+Option A: Use the MySQL Workbench Import Wizard
+
+Option B: Run this command:
+
+LOAD DATA LOCAL INFILE 'path_to/fraud_sql_project_merged_dataset_fixed.csv'
+INTO TABLE transactions_merged
+FIELDS TERMINATED BY ',' ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+
+Run the queries in fraud_detection_queries.sql for analysis.
