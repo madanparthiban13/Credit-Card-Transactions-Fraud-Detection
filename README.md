@@ -77,8 +77,8 @@ Option A: Use MySQL Workbench’s Import Wizard
 
 Option B: Run the command below:
 
-sql
-Copy code
+SQL (Copy Code):
+
 LOAD DATA LOCAL INFILE 'path_to/fraud_sql_project_merged_dataset_fixed.csv'
 INTO TABLE transactions_merged
 FIELDS TERMINATED BY ',' ENCLOSED BY '"'
